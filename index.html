@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Prova flex table</title>
+</head>
+
+<body>
+    <div id="body-div">
+        <div id="header">
+            <div id="header__logo">
+                <p id="logo-p">&#9749;</p>
+            </div>
+            <div id="header__menu-list">
+                <ul>
+                    <li class="header__menu-listitem"><a href="">Home</a> </li>
+                    <li class="header__menu-listitem"><a href="">Chi siamo</a>
+                        <div class="header__submenu">
+                            <p><a href="">Oggi</a></p>
+                            <p><a href="">Le origini</a></p>
+                            <p><a href="">Il domani</a></p>
+                        </div>
+                    </li>
+                    <li class="header__menu-listitem"><a href="">Portfolio</a></li>
+                    <li class="header__menu-listitem"><a href="">Contatti</a></li>
+                </ul>
+            </div>
+            <div class="header__menu">
+                <div class="header__menu-bar"></div>
+                <div class="header__menu-bar"></div>
+                <div class="header__menu-bar"></div>
+            </div>
+        </div>
+
+        <div class="carosello">
+            <div class="carosello__main">
+                <div class="carosello__slide">
+                    <img src="img/uno.jpg">
+                </div>
+                <div class="carosello__slide">
+                    <img src="img/fotolia-92027264european-day-forest-green-forest.jpg">
+                </div>
+                <div class="carosello__slide">
+                    <img src="img/LongIsland-Bahamas-ShaneGross.jpg">
+                </div>
+                <div class="carosello__slide">
+                    <img src="img/vulcano.jpg">
+                </div>
+                <div class="carosello__slide">
+                    <img src="img/pechino1.jpg">
+                </div>
+                <div id="carosello__precedente" class="carosello__selettore">
+                    <a onclick="precedente()">&#10094;</a>
+                </div>
+                <div id="carosello__seguente" class="carosello__selettore">
+                    <a onclick="seguente()">&#10095;</a>
+                </div>
+
+            </div>
+  <!--          <div style="text-align:center">
+                <span class="carosello__pallini" onclick="setSlide(0)"></span>
+                <span class="carosello__pallini" onclick="setSlide(1)"></span>
+                <span class="carosello__pallini" onclick="setSlide(2)"></span>
+                <span class="carosello__pallini" onclick="setSlide(3)"></span>
+                <span class="carosello__pallini" onclick="setSlide(4)"></span>
+            </div> -->
+            <div style="text-align:center">
+                <span class="carosello__pallini"></span>
+                <span class="carosello__pallini"></span>
+                <span class="carosello__pallini"></span>
+                <span class="carosello__pallini"></span>
+                <span class="carosello__pallini"></span>
+            </div>
+
+ <!--           <div class="carosello__parent">
+                <div class="carosello__parent__slide" onclick="setParent(0)"><img src="img/office-t.jpg"></div>
+                <div class="carosello__parent__slide" onclick="setParent(1)"><img
+                        src="img/fotolia-92027264european-day-forest-green-forest.jpg"></div>
+                <div class="carosello__parent__slide" onclick="setParent(2)"><img
+                        src="img/LongIsland-Bahamas-ShaneGross.jpg"></div>
+                <div class="carosello__parent__slide" onclick="setParent(3)"><img src="img/vulcano.jpg"></div>
+                <div class="carosello__parent__slide" onclick="setParent(4)"><img src="img/pechino1.jpg"></div>
+            </div> -->
+
+            <div class="carosello__parent">
+                <div class="carosello__parent__slide"><img src="img/office-t.jpg"></div>
+                <div class="carosello__parent__slide"><img
+                        src="img/fotolia-92027264european-day-forest-green-forest.jpg"></div>
+                <div class="carosello__parent__slide"><img
+                        src="img/LongIsland-Bahamas-ShaneGross.jpg"></div>
+                <div class="carosello__parent__slide"><img src="img/vulcano.jpg"></div>
+                <div class="carosello__parent__slide"><img src="img/pechino1.jpg"></div>
+            </div>
+        </div>
+
+        <div id="numeri" class="accordion">
+            <p class="accordion__clickable">Numeri</p>
+            <div class="accordion__content">
+                <div class="flex-table">
+                    <div class="flex-table__header">
+                        <div class="flex-table__column">
+                            <p>1</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>2</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>3</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>4</p>
+                        </div>
+                    </div>
+                    <div class="flex-table__row">
+                        <div class="flex-table__column">
+                            <p>11</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>12</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>13</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>14</p>
+                        </div>
+                    </div>
+                    <div class="flex-table__row">
+                        <div class="flex-table__column">
+                            <p>21</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>22</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>23</p>
+                        </div>
+                        <div class="flex-table__column">
+                            <p>24</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lettere" class="accordion">
+            <p class="accordion__clickable">Lettere</p>
+            <div class="accordion__content">
+                <div class="flex-table">
+                    <div class="flex-table__header">
+                        <div class="flex-table__column">A</div>
+                        <div class="flex-table__column">B</div>
+                        <div class="flex-table__column">C</div>
+                        <div class="flex-table__column">D</div>
+                    </div>
+                    <div class="flex-table__row" id="lettereRow">
+                        <div class="flex-table__column">E</div>
+                        <div class="flex-table__column">F</div>
+                        <div class="flex-table__column">G</div>
+                        <div class="flex-table__column">H</div>
+                    </div>
+                    <div class="flex-table__row">
+                        <div class="flex-table__column" style="flex-basis: 300%">I</div>
+                        <!--    <div class="flex-table-column-2">L</div> 
+                    <div class="flex-table-column-3">M</div> -->
+                        <div class="flex-table__column">N</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="parole" class="accordion">
+            <p class="accordion__clickable">Parole</p>
+            <div class="accordion__content">
+                <div class="flex-table">
+                    <div class="flex-table__header">
+                        <div class="flex-table__column">Attico</div>
+                        <div class="flex-table__column">Barile</div>
+                        <div class="flex-table__column">Canaglia</div>
+                        <div class="flex-table__column">Dottore</div>
+                    </div>
+                    <div class="flex-table__row">
+                        <div class="flex-table__column">Elemento</div>
+                        <!--     <div class="flex-table-column-2">Feature</div>-->
+                        <div class="flex-table__column" style="flex-basis: 200%">Governo</div>
+                        <div class="flex-table__column">Hotel</div>
+                    </div>
+                    <div class="flex-table__row">
+                        <div class="flex-table__column">Ittico</div>
+                        <div class="flex-table__column">Labartino</div>
+                        <div class="flex-table__column">Moto</div>
+                        <div class="flex-table__column">Nautico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/carosello_copy.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        var el = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < el.length; i++) {
+            var prova = el[i].firstChild.nextSibling;
+            console.log(prova);
+            prova.addEventListener("click", function () {
+
+                for (var k = 0; k < el.length; k++) {
+                    var element = el[k].firstChild.nextSibling
+                    console.log(element)
+          //          element.nextSibling.nextSibling.classList.remove("accordion--open");
+         //           element.nextSibling.nextSibling.style.maxHeight = null;  
+                    if (element != this) {
+                        if (!element.classList.contains("accordion__clickable")) {
+                        //    element.classList.toggle("accordion__clickable");
+                            element.nextSibling.nextSibling.classList.remove("accordion--open");
+                            element.classList.add("accordion__clickable");
+                            element.nextSibling.nextSibling.style.maxHeight = null;  
+                        }
+                    }
+                }
+
+                var accEl = this.nextSibling.nextSibling;
+                console.log(accEl)
+                accEl.classList.toggle("accordion--open");
+
+                if(accEl.classList.contains("accordion--open")){
+                    accEl.style.maxHeight = accEl.scrollHeight + "px";
+                    this.classList.remove("accordion__clickable");
+                } else {
+                    accEl.style.maxHeight = null;
+                    this.classList.add("accordion__clickable");
+                }
+
+
+                /*
+                if (accEl.style.maxHeight != 0) {
+                    accEl.style.maxHeight = 0 + "px";
+                    this.classList.toggle("accordion__clickable");
+                } else {
+                    accEl.style.maxHeight = accEl.scrollHeight + "px";
+                    this.classList.toggle("accordion__clickable");
+                }*/
+            });
+        }
+
+    </script>
+</body>
+
+</html>

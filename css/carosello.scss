@@ -1,0 +1,100 @@
+@use 'variables';
+.carosello{
+    display: flex;
+    flex: 90%;
+    flex-direction: column;
+    align-content: center;
+    color: white;
+    margin: 15px;
+    &__main{
+        display: flex;
+        align-self: center;
+        align-content: center;
+        width:fit-content;
+        position: relative;
+        & img{
+            border: 1px solid white;
+            width: 100%; 
+            height: auto;
+            position: relative;
+        }
+    }
+    &__slide{
+        display: none;
+        animation-name: fade;
+        animation-duration: 3s;
+    }
+    &__selettore{
+        font-size: 30px;
+        position: absolute;
+        top: 45%;
+        width: auto;
+        margin: 10px;
+        padding: 0px 7px;
+        border-radius: 25%;
+        z-index: 10;
+        background-color: rgb(121, 122, 122);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__pallini {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: variables.$back-color;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        transition: background-color 0.6s ease;
+        &:hover{
+            background-color: variables.$header-color;
+        }
+    }
+    &__parent{
+        display: flex;
+        flex: 90%;
+        justify-content: center;
+        justify-items: center;
+        margin: 15px;
+        &__slide{
+            display: flex;
+            margin: 0px 15px;
+            justify-content: center;  
+            padding: 10px; 
+            border: 2px solid black; 
+        }
+        & img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+#carosello__seguente{
+    right: 0px;
+}
+.attivo{
+    background-color: variables.$header-color;
+}
+.selected{
+    border: 2px solid white;    
+}
+@keyframes fade {
+    from {opacity: 0.3} 
+    to {opacity: 1}
+}
+@media screen and (max-width: 900px) {
+    .carosello__parent{
+        margin: 10px 0px;
+        &__slide{
+            margin: 0px 1px;
+            & > img{
+                width: 95%; 
+            }
+        }
+    }
+    .selezionato{
+        padding: 5px;
+    }
+}

@@ -1,0 +1,55 @@
+#carosello {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 50%;
+  color: white;
+}
+
+#carosello-main {
+  display: flex;
+}
+#carosello-main img {
+  border: 1px solid black;
+}
+#carosello-main .slide {
+  display: none;
+}
+#carosello-main .fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+#precedente {
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  align-self: center;
+  margin-left: 0px;
+  padding: 15px;
+}
+
+#seguente {
+  font-size: 30px;
+  display: flex;
+  align-self: center;
+  position: relative;
+  margin-left: -48px;
+  padding: 15px;
+}
+
+#seguente:hover, #precedente:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=carosello.css.map */

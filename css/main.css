@@ -1,0 +1,342 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+}
+
+#body-div {
+  margin: 15px;
+}
+
+.accordion {
+  background-color: #797a7a;
+}
+.accordion > p {
+  padding: 10px 20px;
+  margin: 0px;
+  border-width: 0 2px 2px 2px;
+  border-style: solid;
+  border-color: black;
+}
+.accordion > p:after {
+  float: right;
+  content: " −";
+  font-size: 20px;
+  margin-top: 5px;
+}
+.accordion > p:not(.accordion__clickable) {
+  background-color: #a6a7a7;
+}
+.accordion .accordion__clickable:after {
+  float: right;
+  content: " +";
+  font-size: 20px;
+  margin-top: 5px;
+}
+.accordion .accordion__clickable:hover {
+  background-color: #a6a7a7;
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid black;
+  border-top-style: none;
+}
+.flex-table div {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-table div div p:hover {
+  font-size: 50px;
+  animation-name: focus;
+  animation-duration: 0.4s;
+  animation-fill-mode: backwards;
+}
+
+#lettereRow {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#parole div div div div:hover {
+  animation-name: parole;
+  animation-duration: 0.2s;
+  animation-fill-mode: backwards;
+}
+
+.accordion__content {
+  display: none;
+  color: black;
+  background-color: #d8dad8;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+.accordion--open {
+  display: block;
+}
+
+@keyframes focus {
+  0% {
+    font-size: 50px;
+  }
+  100% {
+    font-size: 80px;
+    transform: rotate(-360deg);
+  }
+}
+@keyframes parole {
+  100% {
+    transform: scale(2);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .flex-table {
+    flex-wrap: wrap;
+    flex: 50%;
+  }
+  .flex-table > div {
+    flex-wrap: wrap;
+    flex: 50%;
+  }
+  .flex-table > div > div {
+    flex: 50%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .flex-table {
+    flex-wrap: wrap;
+    flex: 100%;
+  }
+  .flex-table > div {
+    flex-wrap: wrap;
+    flex: 100%;
+  }
+  .flex-table > div > div {
+    flex: 100%;
+  }
+
+  #header {
+    flex-direction: column;
+  }
+  #header > * {
+    align-self: center;
+  }
+  #header #header__menu-list {
+    list-style-position: outside;
+    margin: -10px;
+  }
+  #header #header__menu-list li:first-child {
+    margin-left: -40px;
+  }
+}
+.carosello {
+  display: flex;
+  flex: 90%;
+  flex-direction: column;
+  align-content: center;
+  color: white;
+  margin: 15px;
+}
+.carosello__main {
+  display: flex;
+  align-self: center;
+  align-content: center;
+  width: fit-content;
+  position: relative;
+}
+.carosello__main img {
+  border: 1px solid white;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.carosello__slide {
+  display: none;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+.carosello__selettore {
+  font-size: 30px;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  margin: 10px;
+  padding: 0px 7px;
+  border-radius: 25%;
+  z-index: 10;
+  background-color: #797a7a;
+}
+.carosello__selettore:hover {
+  cursor: pointer;
+}
+.carosello__pallini {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #d8dad8;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.6s ease;
+}
+.carosello__pallini:hover {
+  background-color: #4f5050;
+}
+.carosello__parent {
+  display: flex;
+  flex: 90%;
+  justify-content: center;
+  justify-items: center;
+  margin: 15px;
+}
+.carosello__parent__slide {
+  display: flex;
+  margin: 0px 15px;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid black;
+}
+.carosello__parent img {
+  width: 100%;
+  height: auto;
+}
+
+#carosello__seguente {
+  right: 0px;
+}
+
+.attivo {
+  background-color: #4f5050;
+}
+
+.selected {
+  border: 2px solid white;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .carosello__parent {
+    margin: 10px 0px;
+  }
+  .carosello__parent__slide {
+    margin: 0px 1px;
+  }
+  .carosello__parent__slide > img {
+    width: 95%;
+  }
+
+  .selezionato {
+    padding: 5px;
+  }
+}
+.header__menu-bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 6px;
+}
+
+#header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-end;
+  background-color: #4f5050;
+  margin: 15px 1px;
+}
+#header__logo {
+  font-size: 60px;
+  margin: -60px 10px;
+}
+#header__menu-list {
+  margin: 15px 10px 0px 0px;
+}
+#header__menu-list > ul {
+  list-style: none;
+}
+#header__menu-list > ul > li {
+  position: relative;
+  display: inline;
+  margin-right: 15px;
+}
+#header__menu-list > ul > li:last-child {
+  margin-right: 0px;
+}
+#header__menu-list > ul a {
+  text-decoration: none;
+  color: white;
+}
+
+li:hover {
+  text-decoration: underline;
+}
+
+.header__submenu {
+  position: absolute;
+  left: 0px;
+  background-color: #4f5050;
+  max-height: 0;
+  width: 90%;
+  padding: 10px 10px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+.header__submenu p {
+  z-index: 10;
+  margin: 10px 0px;
+  font-size: 20px;
+}
+.header__submenu p:hover {
+  text-decoration: underline;
+}
+.header__submenu p:last-child {
+  margin-bottom: 0px;
+}
+
+.header__menu {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+}
+
+@media screen and (max-width: 650px) {
+  .header__menu {
+    position: relative;
+    left: 0%;
+  }
+
+  #header {
+    flex-direction: column;
+  }
+  #header > * {
+    align-self: center;
+  }
+  #header #header__menu-list {
+    list-style-position: outside;
+    margin: -10px;
+  }
+  #header #header__menu-list li:first-child {
+    margin-left: -40px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
